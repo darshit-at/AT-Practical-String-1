@@ -13,27 +13,28 @@ function StringTask() {
         e.preventDefault();
         if(userinput!==''){
             const reverseString = userinput.split('').reverse().join('');
-            const result =reverseString === userinput ? `${userinput} is Palindrome character` : `${userinput} is Not Palindrome character`;
+            const result =reverseString === userinput ? `"${userinput}"  is palindrome string.` : `"${userinput}" is not palindrome string.`;
             setresult(result);
             getuserinput('');
         }
         else {
             alert('Please Enter some text');
+            setresult('');
         }
        
     };
 
     return (
         <React.Fragment>
-            <h2>Enter Any character That You want check</h2>
-            <h2>It is  palindrome or Not</h2>
+            <h2>Enter any string to check either it is palindrome or not.</h2>
+         
             <form onSubmit={HandleSubmit}>
-                <input type='text' name='userinput' value={userinput} placeholder='any text ' onChange={HandleChange} />
+            <input type='text' name='userinput' value={userinput} placeholder=' Input String  ' onChange={HandleChange} />
                 <input type='submit' value="submit" />
             </form>
             <div>
-                <h2>Output : {Result}</h2>
-                
+                <h2>Check Here : {Result}</h2>
+
             </div>
         </React.Fragment>
 
